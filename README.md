@@ -78,23 +78,3 @@ http://localhost:8080/com.location.tracker/locations?deviceId=2&startTime=1.31.2
 -> Query parameter startTime and endTime can be null. In that case, it will return the list of all the location records of the given device.
 For now we are not doing any pagination for fetching records of the device for the assignment. But we should not fetch all the records ideally. We should use lazy loading with pagination.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Notes:
-
