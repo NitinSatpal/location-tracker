@@ -1,4 +1,4 @@
-Steps to run this project on local server (Linux)
+Steps to run this project on local server (Linux)<br />
 
 Prerequisites
 maven
