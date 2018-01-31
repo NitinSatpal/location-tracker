@@ -1,10 +1,10 @@
-Steps to run this project on local server (Linux)<br />
+<b>Steps to run this project on local server (Linux)</b><br />
 
-Prerequisites
+#Prerequisites<br />
 maven
 tomcat
 
-Install maven on Ubuntu
+Install maven on Ubuntu<br />
 sudo apt-get update && sudo apt-get install maven
 
 Install tomcat7 on Ubuntu
