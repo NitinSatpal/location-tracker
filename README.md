@@ -4,24 +4,26 @@ Prerequisites
 maven
 tomcat
 
-To install maven on Ubuntu
-Run sudo ap-get update && sudo apt-get install maven
+Install maven on Ubuntu
+sudo apt-get update && sudo apt-get install maven
 
-To install tomcat7 on Ubuntu
-Run sudo apt-get update && sudo apt-get install tomcat7
+Install tomcat7 on Ubuntu
+sudo apt-get update && sudo apt-get install tomcat7
 
+Clone the project
 git clone https://github.com/NitinSatpal/location-tracker.git
-Go to root directory using cd location-tracker/
 
-To build using maven
-Run mvn clean install
+Go to root directory - cd location-tracker/
 
-This will generate a 'target' folder inside the root directory
-Go to the target directory using cd target
+Build using maven
+mvn clean install
 
-Run the following command to make the command to rename our .war file
+This will generate a 'target' folder inside the root directory with com.location.tracker-0.0.1-SNAPSHOT.war
+
+Go to the target directory - cd target/
+
+Rename .war file inside target directory
 mv com.location.tracker-0.0.1-SNAPSHOT.war com.location.tracker
-
 
 Copy this renamed .war file to the webpps folder of tomcat
 sudo cp -r /home/nitin/location-tracker/target/com.location.tracker.war /var/lib/tomcat7/webapps/
@@ -30,7 +32,9 @@ sudo cp -r /home/nitin/location-tracker/target/com.location.tracker.war /var/lib
 Restart tomcat
 sudo /etc/init.d/tomcat7 restart
 
-Now we are assuming that we have driver (user), tracking device as well as vehicles already registered with us
+
+REST APIS
+We are assuming that we have driver (user), tracking device as well as vehicles already registered with us
 
 To register Driver (user)
 http://localhost:8080/com.location.tracker/user
@@ -66,13 +70,13 @@ Body Params : {
 	"longitude": 30.123
 }
 
--> We can use NOSQL to allow more richer data to be saved in Key Value pair format or just a dump of json object. But for this assignment, I used predefined MySQL schema with above fields
+-> We can use NOSQL to allow more richer data to be saved along with location data like Key Value pair format or just a dump of json object. But for this assignment, I used predefined MySQL schema with above fields
 
 To get location data
 http://localhost:8080/com.location.tracker/locations?deviceId=2&startTime=1.31.2018-23:00:00&endTime=1.31.2018-23:47:00
 
 -> Query parameter startTime and endTime can be null. In that case, it will return the list of all the location records of the given device.
-For now we are not doing any pagination for fetching records of the device for the assignment. But we should not fetch all the records ideally. We should follow lazy loading with pagination.
+For now we are not doing any pagination for fetching records of the device for the assignment. But we should not fetch all the records ideally. We should use lazy loading with pagination.
 
 
 
